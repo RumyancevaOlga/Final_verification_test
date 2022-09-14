@@ -24,5 +24,22 @@ void PrintArray(string [] array)
     Console.WriteLine();
 }
 
+string [] FillStringArrayAvailableValues(string [] array, int N)
+{
+    string [] result = new string [N];
+    for(int i = 0; i < N; i++)
+    {
+        int j = new Random().Next(0, array.Length);
+        result[i] = array[j];
+    }
+    return result;
+}
+
 FillStringArray(array);
 PrintArray(array);
+
+int N = new Random().Next(0, 4);
+Console.WriteLine(N);
+
+string [] newArray = FillStringArrayAvailableValues(array, N);
+PrintArray(newArray);
